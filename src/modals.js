@@ -5,6 +5,7 @@ import Button from "@material-ui/core/Button";
 import { makeStyles, TextField } from "@material-ui/core";
 import { BrowserRouter } from "react-router-dom";
 import PhoneInput from "react-phone-input-2";
+import axios from "axios";
 import "react-phone-input-2/lib/style.css";
 import "./style.css";
 
@@ -20,6 +21,12 @@ function Modals() {
   const classes = useStyle();
   const [phone, setPhone] = useState();
   const [modalIsOpen, setIsOpen] = useState(false);
+  const [email, setEmail] = useState("");
+
+  const handleModalForm = (e) => {
+    e.preventDefault();
+    console.log(phone, email);
+  };
 
   useEffect(() => {
     setTimeout(() => {
@@ -55,7 +62,9 @@ function Modals() {
                     label="Email"
                     variant="outlined"
                     style={{ width: "100%", marginBottom: "10px" }}
-                    required
+                    requireds
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div
@@ -78,6 +87,7 @@ function Modals() {
                   variant="contained"
                   color="primary"
                   className={classes.btn}
+                  onClick={handleModalForm}
                 >
                   Yes, i want
                 </Button>
