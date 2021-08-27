@@ -5,7 +5,6 @@ import Button from "@material-ui/core/Button";
 import { makeStyles, TextField } from "@material-ui/core";
 import { BrowserRouter } from "react-router-dom";
 import PhoneInput from "react-phone-input-2";
-import axios from "axios";
 import "react-phone-input-2/lib/style.css";
 import "./style.css";
 
